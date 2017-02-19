@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 3831c8c4ae1df4c4fa44ac512df9f92d
+timeCreated: 1487535308
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: FLOWER
+    100002: FLOWER1
+    100004: FLOWER1_petals_flower_petal
+    100006: FLOWER1_petals_flower_petal1
+    100008: FLOWER1_petals_flower_petal10
+    100010: FLOWER1_petals_flower_petal11
+    100012: FLOWER1_petals_flower_petal12
+    100014: FLOWER1_petals_flower_petal13
+    100016: FLOWER1_petals_flower_petal14
+    100018: FLOWER1_petals_flower_petal15
+    100020: FLOWER1_petals_flower_petal16
+    100022: FLOWER1_petals_flower_petal17
+    100024: FLOWER1_petals_flower_petal18
+    100026: FLOWER1_petals_flower_petal2
+    100028: FLOWER1_petals_flower_petal3
+    100030: FLOWER1_petals_flower_petal4
+    100032: FLOWER1_petals_flower_petal5
+    100034: FLOWER1_petals_flower_petal6
+    100036: FLOWER1_petals_flower_petal7
+    100038: FLOWER1_petals_flower_petal8
+    100040: FLOWER1_petals_flower_petal9
+    100042: FLOWER2
+    100044: FLOWER2_petals_flower_petal
+    100046: FLOWER2_petals_flower_petal1
+    100048: FLOWER2_petals_flower_petal2
+    100050: FLOWER2_petals_flower_petal3
+    100052: FLOWER2_petals_flower_petal4
+    100054: FLOWER2_petals_flower_petal5
+    100056: FLOWER2_petals_flower_petal6
+    100058: FLOWER2_petals_flower_petal7
+    100060: flower_petal
+    100062: flower_petal 1
+    100064: flower_petal 2
+    100066: flower_petal1
+    100068: flower_petal1 1
+    100070: flower_petal1 2
+    100072: flower_petal2
+    100074: flower_petal2 1
+    100076: flower_petal2 2
+    100078: flower_petal3
+    100080: flower_petal3 1
+    100082: flower_petal3 2
+    100084: FLOWER_petals_flower_petal
+    100086: FLOWER_petals_flower_petal1
+    100088: FLOWER_petals_flower_petal2
+    100090: FLOWER_petals_flower_petal3
+    100092: FLOWER_petals_flower_petal4
+    100094: flower_trio
+    100096: //RootNode
+    100098: petals
+    100100: petals 1
+    100102: petals 2
+    100104: transform1
+    100106: transform10
+    100108: transform11
+    100110: transform12
+    100112: transform13
+    100114: transform14
+    100116: transform15
+    100118: transform16
+    100120: transform17
+    100122: transform18
+    100124: transform19
+    100126: transform2
+    100128: transform20
+    100130: transform21
+    100132: transform22
+    100134: transform23
+    100136: transform24
+    100138: transform25
+    100140: transform26
+    100142: transform27
+    100144: transform28
+    100146: transform29
+    100148: transform3
+    100150: transform30
+    100152: transform31
+    100154: transform32
+    100156: transform33
+    100158: transform34
+    100160: transform35
+    100162: transform36
+    100164: transform37
+    100166: transform38
+    100168: transform39
+    100170: transform4
+    100172: transform40
+    100174: transform41
+    100176: transform42
+    100178: transform43
+    100180: transform44
+    100182: transform45
+    100184: transform46
+    100186: transform47
+    100188: transform5
+    100190: transform6
+    100192: transform7
+    100194: transform8
+    100196: transform9
+    100198: tree1
+    100200: tree_blob1
+    100202: tree_blob1 1
+    100204: tree_blob2
+    100206: trunk1
+    400000: FLOWER
+    400002: FLOWER1
+    400004: FLOWER1_petals_flower_petal
+    400006: FLOWER1_petals_flower_petal1
+    400008: FLOWER1_petals_flower_petal10
+    400010: FLOWER1_petals_flower_petal11
+    400012: FLOWER1_petals_flower_petal12
+    400014: FLOWER1_petals_flower_petal13
+    400016: FLOWER1_petals_flower_petal14
+    400018: FLOWER1_petals_flower_petal15
+    400020: FLOWER1_petals_flower_petal16
+    400022: FLOWER1_petals_flower_petal17
+    400024: FLOWER1_petals_flower_petal18
+    400026: FLOWER1_petals_flower_petal2
+    400028: FLOWER1_petals_flower_petal3
+    400030: FLOWER1_petals_flower_petal4
+    400032: FLOWER1_petals_flower_petal5
+    400034: FLOWER1_petals_flower_petal6
+    400036: FLOWER1_petals_flower_petal7
+    400038: FLOWER1_petals_flower_petal8
+    400040: FLOWER1_petals_flower_petal9
+    400042: FLOWER2
+    400044: FLOWER2_petals_flower_petal
+    400046: FLOWER2_petals_flower_petal1
+    400048: FLOWER2_petals_flower_petal2
+    400050: FLOWER2_petals_flower_petal3
+    400052: FLOWER2_petals_flower_petal4
+    400054: FLOWER2_petals_flower_petal5
+    400056: FLOWER2_petals_flower_petal6
+    400058: FLOWER2_petals_flower_petal7
+    400060: flower_petal
+    400062: flower_petal 1
+    400064: flower_petal 2
+    400066: flower_petal1
+    400068: flower_petal1 1
+    400070: flower_petal1 2
+    400072: flower_petal2
+    400074: flower_petal2 1
+    400076: flower_petal2 2
+    400078: flower_petal3
+    400080: flower_petal3 1
+    400082: flower_petal3 2
+    400084: FLOWER_petals_flower_petal
+    400086: FLOWER_petals_flower_petal1
+    400088: FLOWER_petals_flower_petal2
+    400090: FLOWER_petals_flower_petal3
+    400092: FLOWER_petals_flower_petal4
+    400094: flower_trio
+    400096: //RootNode
+    400098: petals
+    400100: petals 1
+    400102: petals 2
+    400104: transform1
+    400106: transform10
+    400108: transform11
+    400110: transform12
+    400112: transform13
+    400114: transform14
+    400116: transform15
+    400118: transform16
+    400120: transform17
+    400122: transform18
+    400124: transform19
+    400126: transform2
+    400128: transform20
+    400130: transform21
+    400132: transform22
+    400134: transform23
+    400136: transform24
+    400138: transform25
+    400140: transform26
+    400142: transform27
+    400144: transform28
+    400146: transform29
+    400148: transform3
+    400150: transform30
+    400152: transform31
+    400154: transform32
+    400156: transform33
+    400158: transform34
+    400160: transform35
+    400162: transform36
+    400164: transform37
+    400166: transform38
+    400168: transform39
+    400170: transform4
+    400172: transform40
+    400174: transform41
+    400176: transform42
+    400178: transform43
+    400180: transform44
+    400182: transform45
+    400184: transform46
+    400186: transform47
+    400188: transform5
+    400190: transform6
+    400192: transform7
+    400194: transform8
+    400196: transform9
+    400198: tree1
+    400200: tree_blob1
+    400202: tree_blob1 1
+    400204: tree_blob2
+    400206: trunk1
+    2300000: tree_blob2
+    3300000: tree_blob2
+    4300000: tree_blob2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

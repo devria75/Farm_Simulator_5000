@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 482405f2d9cb79a4b909c1756b95b62d
+timeCreated: 1487535308
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: FLOWER
+    100002: FLOWER1
+    100004: FLOWER2
+    100006: flower_petal
+    100008: flower_petal 1
+    100010: flower_petal 2
+    100012: flower_petal1
+    100014: flower_petal1 1
+    100016: flower_petal1 2
+    100018: flower_petal2
+    100020: flower_petal2 1
+    100022: flower_petal2 2
+    100024: flower_petal3
+    100026: flower_petal3 1
+    100028: flower_petal3 2
+    100030: flower_stem
+    100032: flower_stem 1
+    100034: flower_stem 2
+    100036: //RootNode
+    100038: leaf
+    100040: leaf 1
+    100042: leaf 2
+    100044: petals
+    100046: petals 1
+    100048: petals 2
+    400000: FLOWER
+    400002: FLOWER1
+    400004: FLOWER2
+    400006: flower_petal
+    400008: flower_petal 1
+    400010: flower_petal 2
+    400012: flower_petal1
+    400014: flower_petal1 1
+    400016: flower_petal1 2
+    400018: flower_petal2
+    400020: flower_petal2 1
+    400022: flower_petal2 2
+    400024: flower_petal3
+    400026: flower_petal3 1
+    400028: flower_petal3 2
+    400030: flower_stem
+    400032: flower_stem 1
+    400034: flower_stem 2
+    400036: //RootNode
+    400038: leaf
+    400040: leaf 1
+    400042: leaf 2
+    400044: petals
+    400046: petals 1
+    400048: petals 2
+    2300000: flower_petal
+    2300002: flower_petal 1
+    2300004: flower_petal 2
+    2300006: flower_petal1
+    2300008: flower_petal1 1
+    2300010: flower_petal1 2
+    2300012: flower_petal2
+    2300014: flower_petal2 1
+    2300016: flower_petal2 2
+    2300018: flower_petal3
+    2300020: flower_petal3 1
+    2300022: flower_petal3 2
+    2300024: flower_stem
+    2300026: flower_stem 1
+    2300028: flower_stem 2
+    2300030: leaf
+    2300032: leaf 1
+    2300034: leaf 2
+    3300000: flower_petal
+    3300002: flower_petal 1
+    3300004: flower_petal 2
+    3300006: flower_petal1
+    3300008: flower_petal1 1
+    3300010: flower_petal1 2
+    3300012: flower_petal2
+    3300014: flower_petal2 1
+    3300016: flower_petal2 2
+    3300018: flower_petal3
+    3300020: flower_petal3 1
+    3300022: flower_petal3 2
+    3300024: flower_stem
+    3300026: flower_stem 1
+    3300028: flower_stem 2
+    3300030: leaf
+    3300032: leaf 1
+    3300034: leaf 2
+    4300000: flower_stem
+    4300002: leaf
+    4300004: flower_petal
+    4300006: flower_petal1
+    4300008: flower_petal2
+    4300010: flower_petal3
+    4300012: flower_stem
+    4300014: leaf
+    4300016: flower_petal
+    4300018: flower_petal1
+    4300020: flower_petal2
+    4300022: flower_petal3
+    4300024: flower_stem
+    4300026: leaf
+    4300028: flower_petal
+    4300030: flower_petal1
+    4300032: flower_petal2
+    4300034: flower_petal3
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

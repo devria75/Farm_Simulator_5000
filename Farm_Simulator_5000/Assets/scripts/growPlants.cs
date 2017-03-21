@@ -103,6 +103,20 @@ public class growPlants : MonoBehaviour {
 			}
 		}
 
+		//if plot is filled and f key is pressed, water plant
+		if (Input.GetKeyDown ("SHIFT") && plotFilled == true) {
+			//emit water particles
+			//change dirt color
+			//change plant color
+
+			//if pressed within 60 seconds, get darker, start to overwater
+			//if pressed again within 60 seconds, dead, press f to remove plant
+			//once 60 seconds have passed, add 1 to material
+			//if it gets to material 5, brown, plant is dead
+
+			//press f to remove plant
+		}
+
 		//If plot is filled and time has run out show sell text
 		if (plotFilled == true && timeLeft <= 0 && playerInCol) {
 			Vector3 newPos = sellText.rectTransform.position;

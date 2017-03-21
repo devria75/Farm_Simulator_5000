@@ -25,9 +25,15 @@ public class growPlants : MonoBehaviour {
 	public int sellVerticalOffset = 100;
 	public Text sellText;
 
+
+	public playerResources characterResources;
+
 	// Use this for initialization
 	void Start () {
 		plotFilled = false;
+
+		GameObject playerObj = GameObject.FindGameObjectWithTag ("Player");
+		characterResources = playerObj.GetComponent<playerResources> ();
 	}
 	
 	// Update is called once per frame
@@ -35,29 +41,33 @@ public class growPlants : MonoBehaviour {
 		timeLeft -= Time.deltaTime;
 
 		if (playerInCol == true) {
-			if (Input.GetKeyDown("1") && plotFilled == false && FindObjectOfType<playerResources>().cornCounter > 0){
+			if (Input.GetKeyDown("1") && plotFilled == false && characterResources.cornCounter > 0){
 				plant = Instantiate(Corn, transform.position, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Corn;
 				plotFilled = true;
+				characterResources.cornCounter--;
 			}
-			if (Input.GetKeyDown("2") && plotFilled == false && FindObjectOfType<playerResources>().carrotCounter > 0){
+			if (Input.GetKeyDown("2") && plotFilled == false && characterResources.carrotCounter > 0){
 				plant = Instantiate(Carrot, transform.position+Vector3.down*.3f, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Carrot;
 				plotFilled = true;
+				characterResources.carrotCounter--;
 			}
-			if (Input.GetKeyDown("3") && plotFilled == false && FindObjectOfType<playerResources>().tomatoCounter > 0){
+			if (Input.GetKeyDown("3") && plotFilled == false && characterResources.tomatoCounter > 0){
 				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Tomato;
 				plotFilled = true;
+				characterResources.tomatoCounter--;
 			}
-			if (Input.GetKeyDown("4") && plotFilled == false && FindObjectOfType<playerResources>().potatoCounter > 0){
+			if (Input.GetKeyDown("4") && plotFilled == false && characterResources.potatoCounter > 0){
 				plant = Instantiate(Potato, transform.position+Vector3.up*.1f, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Potato;
 				plotFilled = true;
+				characterResources.potatoCounter--;
 			}
 		}
 

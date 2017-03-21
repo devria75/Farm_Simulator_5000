@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class growPlants : MonoBehaviour {
 
+	//color materials for sprouts
+	public Material[] plantColor;
+	public Renderer rend;
+	int assignedPlantColor = 2;
+
 	//timer info
 	public float timeLeft;
 	public int timer = 30;
+	public int waterConsumeTime = 60;
+	public int deathTime = 180;
 
 	//player starts not in collider
 	public bool playerInCol = false;
@@ -57,7 +64,8 @@ public class growPlants : MonoBehaviour {
 
 			//CORN
 			if (Input.GetKeyDown("1") && plotFilled == false && characterResources.cornCounter > 0){
-				plant = Instantiate(Corn, transform.position, Quaternion.identity) as GameObject;
+				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+				rend.sharedMaterial = plantColor [2];
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Corn;
 				plotFilled = true;
@@ -66,7 +74,8 @@ public class growPlants : MonoBehaviour {
 
 			//CARROT
 			if (Input.GetKeyDown("2") && plotFilled == false && characterResources.carrotCounter > 0){
-				plant = Instantiate(Carrot, transform.position+Vector3.down*.3f, Quaternion.identity) as GameObject;
+				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+				rend.sharedMaterial = plantColor [2];
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Carrot;
 				plotFilled = true;
@@ -76,6 +85,7 @@ public class growPlants : MonoBehaviour {
 			//TOMATO
 			if (Input.GetKeyDown("3") && plotFilled == false && characterResources.tomatoCounter > 0){
 				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+				rend.sharedMaterial = plantColor [2];
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Tomato;
 				plotFilled = true;
@@ -84,7 +94,8 @@ public class growPlants : MonoBehaviour {
 
 			//POTATO
 			if (Input.GetKeyDown("4") && plotFilled == false && characterResources.potatoCounter > 0){
-				plant = Instantiate(Potato, transform.position+Vector3.up*.1f, Quaternion.identity) as GameObject;
+				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+				rend.sharedMaterial = plantColor [2];
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Potato;
 				plotFilled = true;

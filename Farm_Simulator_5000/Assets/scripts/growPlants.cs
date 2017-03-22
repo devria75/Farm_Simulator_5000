@@ -4,25 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class growPlants : MonoBehaviour {
-
-	//color materials for sprouts
-	public Material[] plantColor;
-	public Renderer rend;
-	int assignedPlantColor = 5;
-	public Material[] dirtColor;
-	int assignedDirtColor = 5;
-
 	//timer info
 	public float timeLeft;
-	public int timer = 30;
+	public int timer = 120;
 	public int waterConsumeTime = 60;
 	public int deathTime = 180;
+	public bool isWatered = false;
 
 	//player starts not in collider
 	public bool playerInCol = false;
 
 	//game objects being instantiated or destroyed
 	private GameObject plant;
+	public GameObject deadSprout;
 	public GameObject Carrot;
 	public GameObject Corn;
 	public GameObject Potato;
@@ -49,12 +43,23 @@ public class growPlants : MonoBehaviour {
 	public Text dirtText;
 	public int sellVerticalOffset = 100;
 	public Text sellText;
+	public int removeVerticalOffset = 100;
+	public Text removeText;
+	public int waterVerticalOffset = 50;
+	public Text waterText;
 
 	//character resources
 	public playerResources characterResources;
 
 	//watering
 	public GameObject waterPrefab;
+
+	//color materials for sprouts
+	//public Material[] plantColor;
+	//public Renderer rend;
+	//int assignedPlantColor = 5;
+	//public Material[] dirtColor;
+	//int assignedDirtColor = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -64,6 +69,9 @@ public class growPlants : MonoBehaviour {
 		//get playerResources script on start
 		GameObject playerObj = GameObject.FindGameObjectWithTag ("Player");
 		characterResources = playerObj.GetComponent<playerResources> ();
+
+		//LOOK AT ME IF AUDIO IS NOT PLAYING THE RIGHT SOUND
+		audio = GetComponent<AudioSource>();
 
 	}
 	
@@ -77,8 +85,7 @@ public class growPlants : MonoBehaviour {
 			//CORN
 			if (Input.GetKeyDown("1") && plotFilled == false && characterResources.cornCounter > 0){
 				audio.PlayOneShot (dirt);
-				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
-				rend.sharedMaterial = plantColor [2];
+				plant = Instantiate(Sprout, transform.position+Vector3.up*.2f, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Corn;
 				plotFilled = true;
@@ -88,8 +95,7 @@ public class growPlants : MonoBehaviour {
 			//CARROT
 			if (Input.GetKeyDown("2") && plotFilled == false && characterResources.carrotCounter > 0){
 				audio.PlayOneShot (dirt);
-				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
-				rend.sharedMaterial = plantColor [2];
+				plant = Instantiate(Sprout, transform.position+Vector3.up*.2f, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Carrot;
 				plotFilled = true;
@@ -99,8 +105,7 @@ public class growPlants : MonoBehaviour {
 			//TOMATO
 			if (Input.GetKeyDown("3") && plotFilled == false && characterResources.tomatoCounter > 0){
 				audio.PlayOneShot (dirt);
-				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
-				rend.sharedMaterial = plantColor [2];
+				plant = Instantiate(Sprout, transform.position+Vector3.up*.2f, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Tomato;
 				plotFilled = true;
@@ -110,8 +115,7 @@ public class growPlants : MonoBehaviour {
 			//POTATO
 			if (Input.GetKeyDown("4") && plotFilled == false && characterResources.potatoCounter > 0){
 				audio.PlayOneShot (dirt);
-				plant = Instantiate(Sprout, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
-				rend.sharedMaterial = plantColor [2];
+				plant = Instantiate(Sprout, transform.position+Vector3.up*.2f, Quaternion.identity) as GameObject;
 				timeLeft = timer;
 				plantInPlot = PlotStatus.Potato;
 				plotFilled = true;
@@ -119,27 +123,51 @@ public class growPlants : MonoBehaviour {
 			}
 		}
 
-		//if plot is filled and f key is pressed, water plant
-		if (Input.GetKeyDown (KeyCode.LeftShift) && plotFilled == true) {
+		//if plot is filled and shift key is pressed, water plant
+		if (Input.GetKeyDown(KeyCode.LeftShift) && plotFilled == true) {
+			//play audio
 			Debug.Log("Sound.");
 			audio.PlayOneShot (water);
 			//emit water particles
-			GameObject waterObject = Instantiate (waterPrefab, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
-			Destroy(gameObject);
-			//if pressed within 60 seconds, get darker, start to overwater
-			//if pressed again within 60 seconds, dead, press f to remove plant
-			//once 60 seconds have passed, add 1 to material
-			//if it gets to material 5, brown, plant is dead
-			//change dirt color
-			rend.sharedMaterial = dirtColor [assignedDirtColor];
-			//change plant color
-			plant.GetComponent<Renderer>().sharedMaterial = plantColor [assignedPlantColor];
-
-			//press f to remove plant
+			GameObject waterObject = Instantiate (waterPrefab, transform.position, Quaternion.identity) as GameObject;
+			isWatered = true;
 		}
 
-		//If plot is filled and time has run out show sell text
-		if (plotFilled == true && timeLeft <= 0 && playerInCol) {
+		//plant dies if time runs out with no water
+		if (plotFilled == true && timeLeft <= 0 && isWatered == false) {
+			Destroy (plant);
+			plant = Instantiate(deadSprout, transform.position+Vector3.up*.2f, Quaternion.identity) as GameObject;
+		}
+
+		//if plant is done growing, turn into finished crop
+		if (plotFilled == true && timeLeft <= 0 && isWatered == true) {
+			//CORN
+			if (plantInPlot == PlotStatus.Corn){
+				Destroy (plant);
+				plant = Instantiate(Corn, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+			}
+
+			//CARROT
+			if (plantInPlot == PlotStatus.Carrot){
+				Destroy (plant);
+				plant = Instantiate(Carrot, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+			}
+
+			//TOMATO
+			if (plantInPlot == PlotStatus.Tomato){
+				Destroy (plant);
+				plant = Instantiate(Tomato, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+			}
+
+			//POTATO
+			if (plantInPlot == PlotStatus.Potato){
+				Destroy (plant);
+				plant = Instantiate(Potato, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+			}
+		}
+
+		//If plot is filled, and time has run out, and player has watered it, show sell text
+		if (plotFilled == true && timeLeft <= 0 && playerInCol && isWatered == true) {
 			Vector3 newPos = sellText.rectTransform.position;
 			newPos.y = sellVerticalOffset;
 			sellText.rectTransform.position = newPos;
@@ -154,6 +182,21 @@ public class growPlants : MonoBehaviour {
 				
 			}
 		}
+
+		//If plot is filled and time has run out show remove text
+		if (plotFilled == true && timeLeft <= 0 && playerInCol && isWatered == false) {
+			Vector3 newPos = removeText.rectTransform.position;
+			newPos.y = removeVerticalOffset;
+			removeText.rectTransform.position = newPos;
+
+			//if player presses F then add the money that each plant is worth (see array at top for amounts)
+			if (Input.GetKeyDown ("f")) {
+				plantInPlot = PlotStatus.Empty;
+				plotFilled = false;
+				Destroy (plant);
+
+			}
+		}
 	}
 
 
@@ -165,6 +208,11 @@ public class growPlants : MonoBehaviour {
 			Vector3 newPos = dirtText.rectTransform.position;
 			newPos.y = dirtVerticalOffset;
 			dirtText.rectTransform.position = newPos;
+		}
+		if (plotFilled == true) {
+			Vector3 newPos2 = waterText.rectTransform.position;
+			newPos2.y = waterVerticalOffset;
+			waterText.rectTransform.position = newPos2;
 		}
 		playerInCol = true;
 	}
@@ -178,6 +226,14 @@ public class growPlants : MonoBehaviour {
 		Vector3 newPos2 = sellText.rectTransform.position;
 		newPos2.y = sellVerticalOffset * -1;
 		sellText.rectTransform.position = newPos2;
+
+		Vector3 newPos3 = removeText.rectTransform.position;
+		newPos3.y = removeVerticalOffset * -1;
+		removeText.rectTransform.position = newPos3;
+
+		Vector3 newPos4 = waterText.rectTransform.position;
+		newPos4.y = waterVerticalOffset * -1;
+		waterText.rectTransform.position = newPos4;
 
 		playerInCol = false;
 	}

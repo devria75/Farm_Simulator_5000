@@ -8,7 +8,9 @@ public class growPlants : MonoBehaviour {
 	//color materials for sprouts
 	public Material[] plantColor;
 	public Renderer rend;
-	int assignedPlantColor = 2;
+	int assignedPlantColor = 5;
+	public Material[] dirtColor;
+	int assignedDirtColor = 5;
 
 	//timer info
 	public float timeLeft;
@@ -44,6 +46,9 @@ public class growPlants : MonoBehaviour {
 
 	//character resources
 	public playerResources characterResources;
+
+	//watering
+	public GameObject waterPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -101,6 +106,24 @@ public class growPlants : MonoBehaviour {
 				plotFilled = true;
 				characterResources.potatoCounter--;
 			}
+		}
+
+		//if plot is filled and f key is pressed, water plant
+		if (Input.GetKeyDown (KeyCode.LeftShift) && plotFilled == true) {
+			//emit water particles
+			GameObject waterObject = Instantiate (waterPrefab, transform.position+Vector3.up*.3f, Quaternion.identity) as GameObject;
+			Destroy(gameObject);
+
+			//if pressed within 60 seconds, get darker, start to overwater
+			//if pressed again within 60 seconds, dead, press f to remove plant
+			//once 60 seconds have passed, add 1 to material
+			//if it gets to material 5, brown, plant is dead
+			//change dirt color
+			rend.sharedMaterial = dirtColor [assignedDirtColor];
+			//change plant color
+			plant.GetComponent<Renderer>().sharedMaterial = plantColor [assignedPlantColor];
+
+			//press f to remove plant
 		}
 
 		//If plot is filled and time has run out show sell text
